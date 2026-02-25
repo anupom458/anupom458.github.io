@@ -183,7 +183,7 @@
         </div>
 
         <!-- Scroll indicator -->
-        <div class="animate-fadeIn absolute bottom-8 left-1/2 -translate-x-1/2" style="animation-delay: 1.5s">
+        <div id="scroll-indicator" class="animate-fadeIn absolute bottom-8 left-1/2 -translate-x-1/2 transition-opacity duration-500" style="animation-delay: 1.5s">
             <div class="w-5 h-8 border-2 border-dark-400 rounded-full flex justify-center pt-1">
                 <div class="w-1 h-2 bg-dark-300 rounded-full animate-bounce"></div>
             </div>
@@ -656,6 +656,18 @@
     }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
 
     document.querySelectorAll('.reveal, .reveal-left').forEach(el => observer.observe(el));
+
+    // Hide scroll indicator on scroll
+    const scrollIndicator = document.getElementById('scroll-indicator');
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 100) {
+            scrollIndicator.style.opacity = '0';
+            scrollIndicator.style.pointerEvents = 'none';
+        } else {
+            scrollIndicator.style.opacity = '1';
+            scrollIndicator.style.pointerEvents = '';
+        }
+    }, { passive: true });
 
     // Stagger delay for sibling reveals
     document.querySelectorAll('.space-y-4 .reveal, .grid .reveal').forEach((el, i) => {
