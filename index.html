@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Taslim R. Anupom, Ph.D. | Engineer, Researcher, Founder</title>
-    <meta name="description" content="Ph.D. Electrical Engineer specializing in microfluidics, IoT, full-stack development, and space biology. Lead Platform Developer at NemaLife. Founder of Dynera Labs.">
+    <title>Taslim R. Anupom, Ph.D. | Engineer & Researcher</title>
+    <meta name="description" content="Ph.D. Electrical Engineer specializing in microfluidics, IoT, full-stack development, and space biology. Lead Platform Developer at NemaLife.">
 
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -68,6 +68,10 @@
         /* Timeline */
         .timeline-line { position: absolute; left: 24px; top: 0; bottom: 0; width: 2px; background: linear-gradient(to bottom, #3b82f6, #8b5cf6, #06b6d4); }
         .timeline-dot { width: 12px; height: 12px; border-radius: 50%; background: #3b82f6; border: 2px solid #0f172a; position: absolute; left: 19px; top: 6px; z-index: 10; }
+        @media (max-width: 639px) {
+            .timeline-line { left: 12px; }
+            .timeline-dot { left: 7px; width: 10px; height: 10px; }
+        }
 
         /* Skill bar */
         .skill-bar { height: 4px; background: rgba(255,255,255,0.1); border-radius: 2px; overflow: hidden; }
@@ -99,7 +103,7 @@
 <!-- NAVIGATION -->
 <!-- ═══════════════════════════════════════════════ -->
 <nav class="fixed top-0 w-full z-50 glass" x-data="{ scrolled: false }" @scroll.window="scrolled = (window.scrollY > 50)">
-    <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 py-3 sm:py-4 flex items-center justify-between">
         <a href="#hero" class="text-lg font-bold tracking-tight">
             <span class="text-accent">T</span><span class="text-dark-200">A</span>
         </a>
@@ -118,7 +122,7 @@
         </button>
     </div>
     <!-- Mobile menu -->
-    <div x-show="mobileMenu" x-transition class="md:hidden px-6 pb-4 space-y-3 text-sm text-dark-200">
+    <div x-show="mobileMenu" x-transition class="md:hidden px-4 sm:px-6 pb-4 space-y-3 text-sm text-dark-200">
         <a href="#about" class="block hover:text-white" @click="mobileMenu = false">About</a>
         <a href="#experience" class="block hover:text-white" @click="mobileMenu = false">Experience</a>
         <a href="#projects" class="block hover:text-white" @click="mobileMenu = false">Projects</a>
@@ -133,47 +137,47 @@
 <!-- ═══════════════════════════════════════════════ -->
 <section id="hero" class="min-h-screen flex items-center justify-center relative overflow-hidden">
     <!-- Background gradient orbs -->
-    <div class="absolute top-1/4 -left-32 w-96 h-96 bg-accent/10 rounded-full blur-3xl"></div>
-    <div class="absolute bottom-1/4 -right-32 w-96 h-96 bg-purple/10 rounded-full blur-3xl"></div>
+    <div class="absolute top-1/4 -left-32 w-64 sm:w-96 h-64 sm:h-96 bg-accent/10 rounded-full blur-3xl"></div>
+    <div class="absolute bottom-1/4 -right-32 w-64 sm:w-96 h-64 sm:h-96 bg-purple/10 rounded-full blur-3xl"></div>
 
-    <div class="max-w-4xl mx-auto px-6 text-center">
-        <p class="animate-fadeUp text-accent font-mono text-sm tracking-widest uppercase mb-4" style="animation-delay: 0.2s">Engineer. Researcher. Founder.</p>
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 text-center">
+        <p class="animate-fadeUp text-accent font-mono text-xs sm:text-sm tracking-widest uppercase mb-3 sm:mb-4" style="animation-delay: 0.2s">Engineer. Researcher. Builder.</p>
 
-        <h1 class="animate-fadeUp text-5xl md:text-7xl font-black leading-tight mb-6" style="animation-delay: 0.4s">
+        <h1 class="animate-fadeUp text-3xl sm:text-5xl md:text-7xl font-black leading-tight mb-4 sm:mb-6" style="animation-delay: 0.4s">
             Taslim R. Anupom<span class="gradient-text">, Ph.D.</span>
         </h1>
 
-        <p class="animate-fadeUp text-lg md:text-xl text-dark-200 max-w-2xl mx-auto mb-8 leading-relaxed" style="animation-delay: 0.6s">
+        <p class="animate-fadeUp text-base sm:text-lg md:text-xl text-dark-200 max-w-2xl mx-auto mb-6 sm:mb-8 leading-relaxed" style="animation-delay: 0.6s">
             Building systems at the intersection of microfluidics, software, and space biology.
             From ISS payloads to IoT products — concept to reality.
         </p>
 
         <!-- Stats row -->
-        <div class="animate-fadeUp flex flex-wrap justify-center gap-8 md:gap-12 mb-10" style="animation-delay: 0.8s">
+        <div class="animate-fadeUp grid grid-cols-2 sm:flex sm:flex-wrap justify-center gap-4 sm:gap-8 md:gap-12 mb-8 sm:mb-10" style="animation-delay: 0.8s">
             <div class="text-center">
-                <div class="text-3xl font-bold text-white stat-number">103+</div>
-                <div class="text-xs text-dark-300 uppercase tracking-wider mt-1">Citations</div>
+                <div class="text-2xl sm:text-3xl font-bold text-white stat-number">103+</div>
+                <div class="text-[10px] sm:text-xs text-dark-300 uppercase tracking-wider mt-1">Citations</div>
             </div>
             <div class="text-center">
-                <div class="text-3xl font-bold text-white stat-number">7</div>
-                <div class="text-xs text-dark-300 uppercase tracking-wider mt-1">Publications</div>
+                <div class="text-2xl sm:text-3xl font-bold text-white stat-number">7</div>
+                <div class="text-[10px] sm:text-xs text-dark-300 uppercase tracking-wider mt-1">Publications</div>
             </div>
             <div class="text-center">
-                <div class="text-3xl font-bold text-white stat-number">2</div>
-                <div class="text-xs text-dark-300 uppercase tracking-wider mt-1">Patents</div>
+                <div class="text-2xl sm:text-3xl font-bold text-white stat-number">2</div>
+                <div class="text-[10px] sm:text-xs text-dark-300 uppercase tracking-wider mt-1">Patents</div>
             </div>
             <div class="text-center">
-                <div class="text-3xl font-bold text-white stat-number">8+</div>
-                <div class="text-xs text-dark-300 uppercase tracking-wider mt-1">Years Exp.</div>
+                <div class="text-2xl sm:text-3xl font-bold text-white stat-number">8+</div>
+                <div class="text-[10px] sm:text-xs text-dark-300 uppercase tracking-wider mt-1">Years Exp.</div>
             </div>
         </div>
 
         <!-- CTA buttons -->
-        <div class="animate-fadeUp flex flex-wrap justify-center gap-4" style="animation-delay: 1s">
-            <a href="#projects" class="px-6 py-3 bg-accent hover:bg-accent-dark text-white font-medium rounded-lg transition shadow-lg shadow-accent/20">
+        <div class="animate-fadeUp flex flex-wrap justify-center gap-3 sm:gap-4" style="animation-delay: 1s">
+            <a href="#projects" class="px-5 sm:px-6 py-2.5 sm:py-3 bg-accent hover:bg-accent-dark text-white text-sm sm:text-base font-medium rounded-lg transition shadow-lg shadow-accent/20">
                 View Projects
             </a>
-            <a href="#contact" class="px-6 py-3 border border-dark-400 hover:border-accent text-dark-100 font-medium rounded-lg transition">
+            <a href="#contact" class="px-5 sm:px-6 py-2.5 sm:py-3 border border-dark-400 hover:border-accent text-dark-100 text-sm sm:text-base font-medium rounded-lg transition">
                 Get in Touch
             </a>
         </div>
@@ -190,14 +194,14 @@
 <!-- ═══════════════════════════════════════════════ -->
 <!-- ABOUT -->
 <!-- ═══════════════════════════════════════════════ -->
-<section id="about" class="py-24 px-6">
+<section id="about" class="py-16 sm:py-24 px-4 sm:px-6">
     <div class="max-w-6xl mx-auto">
-        <div class="reveal text-center mb-16">
-            <p class="text-accent font-mono text-sm tracking-widest uppercase mb-2">Background</p>
-            <h2 class="text-4xl font-bold">About Me</h2>
+        <div class="reveal text-center mb-10 sm:mb-16">
+            <p class="text-accent font-mono text-xs sm:text-sm tracking-widest uppercase mb-2">Background</p>
+            <h2 class="text-3xl sm:text-4xl font-bold">About Me</h2>
         </div>
 
-        <div class="grid md:grid-cols-5 gap-12 items-start">
+        <div class="grid md:grid-cols-5 gap-8 sm:gap-12 items-start">
             <!-- Left: Photo placeholder + quick info -->
             <div class="reveal md:col-span-2 space-y-6">
                 <div class="bg-dark-600 rounded-2xl overflow-hidden border border-dark-400" style="aspect-ratio: 3/4;">
@@ -217,10 +221,6 @@
                         <svg class="w-4 h-4 text-accent flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M6 6V5a3 3 0 013-3h2a3 3 0 013 3v1h2a2 2 0 012 2v3.57A22.952 22.952 0 0110 13a22.95 22.95 0 01-8-1.43V8a2 2 0 012-2h2zm2-1a1 1 0 011-1h2a1 1 0 011 1v1H8V5zm1 5a1 1 0 011-1h.01a1 1 0 110 2H10a1 1 0 01-1-1z" clip-rule="evenodd"/></svg>
                         Lead Platform Developer, NemaLife
                     </div>
-                    <div class="flex items-center gap-3 text-sm text-dark-200">
-                        <svg class="w-4 h-4 text-purple flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M11.3 1.046A1 1 0 0112 2v5h4a1 1 0 01.82 1.573l-7 10A1 1 0 018 18v-5H4a1 1 0 01-.82-1.573l7-10a1 1 0 011.12-.38z" clip-rule="evenodd"/></svg>
-                        Founder, Dynera Labs
-                    </div>
                 </div>
             </div>
 
@@ -233,7 +233,7 @@
                     As <strong class="text-white">Lead Platform Developer at NemaLife Inc.</strong>, I architect scalable platforms for high-throughput <em>C. elegans</em> phenotyping, lead a 14-person cross-functional team, and built <strong class="text-white">NemaStudio.ai</strong> — our data analysis web platform using React 18, Plotly.js, and MUI. My collaborations with <strong class="text-white">NASA and ESA</strong> on spaceflight payloads have resulted in 7 peer-reviewed publications (103+ citations) and a granted US patent.
                 </p>
                 <p>
-                    As founder of <strong class="text-white">Dynera Labs</strong>, I designed and manufactured the <strong class="text-white">Prestige Wall</strong> — a collectible card price tracking display (Raspberry Pi + ESP32 + 25 OLEDs) with a full e-commerce platform, from embedded firmware to Docker deployment.
+                    On the side, I designed and manufactured the <strong class="text-white">Prestige Wall</strong> — a collectible card price tracking display (Raspberry Pi + ESP32 + 25 OLEDs) with a full e-commerce platform, from embedded firmware to Docker deployment.
                 </p>
                 <p>
                     I hold a <strong class="text-white">Ph.D. in Electrical Engineering</strong> from Texas Tech University, where my dissertation on integrated microfluidic platforms led directly to the founding of NemaLife Inc.
@@ -246,38 +246,21 @@
 <!-- ═══════════════════════════════════════════════ -->
 <!-- EXPERIENCE -->
 <!-- ═══════════════════════════════════════════════ -->
-<section id="experience" class="py-24 px-6 bg-dark-900/50">
+<section id="experience" class="py-16 sm:py-24 px-4 sm:px-6 bg-dark-900/50">
     <div class="max-w-4xl mx-auto">
-        <div class="reveal text-center mb-16">
-            <p class="text-accent font-mono text-sm tracking-widest uppercase mb-2">Career</p>
-            <h2 class="text-4xl font-bold">Experience</h2>
+        <div class="reveal text-center mb-10 sm:mb-16">
+            <p class="text-accent font-mono text-xs sm:text-sm tracking-widest uppercase mb-2">Career</p>
+            <h2 class="text-3xl sm:text-4xl font-bold">Experience</h2>
         </div>
 
         <!-- Timeline -->
-        <div class="relative pl-16 space-y-12">
+        <div class="relative pl-10 sm:pl-16 space-y-8 sm:space-y-12">
             <div class="timeline-line"></div>
-
-            <!-- Dynera Labs -->
-            <div class="reveal relative">
-                <div class="timeline-dot pulse-glow"></div>
-                <div class="glass rounded-xl p-6 card-hover">
-                    <div class="flex flex-wrap items-center justify-between gap-2 mb-3">
-                        <h3 class="text-lg font-bold text-white">Dynera Labs</h3>
-                        <span class="text-xs font-mono text-accent bg-accent/10 px-3 py-1 rounded-full">2024 - Present</span>
-                    </div>
-                    <p class="text-purple-light font-medium text-sm mb-3">Founder & Technical Lead</p>
-                    <ul class="space-y-2 text-sm text-dark-200">
-                        <li class="flex gap-2"><span class="text-accent mt-1">&#9654;</span> Founded a hardware-software company designing the Prestige Wall — a collectible card price tracking display (25 OLEDs, Raspberry Pi, ESP32)</li>
-                        <li class="flex gap-2"><span class="text-accent mt-1">&#9654;</span> Built the full stack: embedded firmware, Flask web server, e-commerce site (Stripe, eBay API), IoT device sync, Docker deployment</li>
-                        <li class="flex gap-2"><span class="text-accent mt-1">&#9654;</span> Created manufacturing pipeline with automated QA (20+ checks), 518+ automated tests</li>
-                    </ul>
-                </div>
-            </div>
 
             <!-- NemaLife Lead -->
             <div class="reveal relative">
-                <div class="timeline-dot" style="background: #8b5cf6;"></div>
-                <div class="glass rounded-xl p-6 card-hover">
+                <div class="timeline-dot pulse-glow" style="background: #8b5cf6;"></div>
+                <div class="glass rounded-xl p-4 sm:p-6 card-hover">
                     <div class="flex flex-wrap items-center justify-between gap-2 mb-3">
                         <h3 class="text-lg font-bold text-white">NemaLife Inc.</h3>
                         <span class="text-xs font-mono text-purple bg-purple/10 px-3 py-1 rounded-full">Jan 2023 - Present</span>
@@ -295,7 +278,7 @@
             <!-- NemaLife Microsystems -->
             <div class="reveal relative">
                 <div class="timeline-dot" style="background: #06b6d4;"></div>
-                <div class="glass rounded-xl p-6 card-hover">
+                <div class="glass rounded-xl p-4 sm:p-6 card-hover">
                     <div class="flex flex-wrap items-center justify-between gap-2 mb-3">
                         <h3 class="text-lg font-bold text-white">NemaLife Inc.</h3>
                         <span class="text-xs font-mono text-cyan bg-cyan/10 px-3 py-1 rounded-full">Mar 2022 - Dec 2022</span>
@@ -312,7 +295,7 @@
             <!-- TTU Research -->
             <div class="reveal relative">
                 <div class="timeline-dot" style="background: #10b981;"></div>
-                <div class="glass rounded-xl p-6 card-hover">
+                <div class="glass rounded-xl p-4 sm:p-6 card-hover">
                     <div class="flex flex-wrap items-center justify-between gap-2 mb-3">
                         <h3 class="text-lg font-bold text-white">Texas Tech University</h3>
                         <span class="text-xs font-mono text-emerald-400 bg-emerald-400/10 px-3 py-1 rounded-full">Jan 2017 - Feb 2022</span>
@@ -330,7 +313,7 @@
             <!-- Education -->
             <div class="reveal relative">
                 <div class="timeline-dot" style="background: #f59e0b;"></div>
-                <div class="glass rounded-xl p-6 card-hover">
+                <div class="glass rounded-xl p-4 sm:p-6 card-hover">
                     <div class="flex flex-wrap items-center justify-between gap-2 mb-3">
                         <h3 class="text-lg font-bold text-white">Education</h3>
                         <span class="text-xs font-mono text-amber-400 bg-amber-400/10 px-3 py-1 rounded-full">2012 - 2022</span>
@@ -359,25 +342,25 @@
 <!-- ═══════════════════════════════════════════════ -->
 <!-- PROJECTS -->
 <!-- ═══════════════════════════════════════════════ -->
-<section id="projects" class="py-24 px-6">
+<section id="projects" class="py-16 sm:py-24 px-4 sm:px-6">
     <div class="max-w-6xl mx-auto">
-        <div class="reveal text-center mb-16">
-            <p class="text-accent font-mono text-sm tracking-widest uppercase mb-2">Portfolio</p>
-            <h2 class="text-4xl font-bold">Featured Projects</h2>
+        <div class="reveal text-center mb-10 sm:mb-16">
+            <p class="text-accent font-mono text-xs sm:text-sm tracking-widest uppercase mb-2">Portfolio</p>
+            <h2 class="text-3xl sm:text-4xl font-bold">Featured Projects</h2>
         </div>
 
-        <div class="grid md:grid-cols-2 gap-8">
+        <div class="grid sm:grid-cols-2 gap-6 sm:gap-8">
             <!-- Prestige Wall -->
             <div class="reveal glass rounded-2xl overflow-hidden card-hover group">
-                <div class="h-48 bg-gradient-to-br from-accent/20 to-purple/20 flex items-center justify-center">
+                <div class="h-36 sm:h-48 bg-gradient-to-br from-accent/20 to-purple/20 flex items-center justify-center">
                     <div class="text-center">
                         <div class="text-5xl mb-2">&#128290;</div>
                         <p class="text-dark-300 text-sm">Prestige Wall</p>
                     </div>
                 </div>
-                <div class="p-6">
+                <div class="p-4 sm:p-6">
                     <div class="flex items-center gap-2 mb-3">
-                        <h3 class="text-xl font-bold text-white">Prestige Wall</h3>
+                        <h3 class="text-lg sm:text-xl font-bold text-white">Prestige Wall</h3>
                         <span class="text-xs bg-accent/10 text-accent px-2 py-0.5 rounded-full">Hardware + Software</span>
                     </div>
                     <p class="text-dark-200 text-sm mb-4">
@@ -391,21 +374,21 @@
                         <span class="text-xs px-2 py-1 rounded bg-dark-500 text-dark-200">Docker</span>
                         <span class="text-xs px-2 py-1 rounded bg-dark-500 text-dark-200">I2C</span>
                     </div>
-                    <a href="https://dyneralabs.com" target="_blank" class="text-accent text-sm font-medium hover:underline">dyneralabs.com &rarr;</a>
+                    <span class="text-dark-300 text-sm">Personal Project</span>
                 </div>
             </div>
 
             <!-- NemaStudio.ai -->
             <div class="reveal glass rounded-2xl overflow-hidden card-hover group">
-                <div class="h-48 bg-gradient-to-br from-purple/20 to-cyan/20 flex items-center justify-center">
+                <div class="h-36 sm:h-48 bg-gradient-to-br from-purple/20 to-cyan/20 flex items-center justify-center">
                     <div class="text-center">
                         <div class="text-5xl mb-2">&#128300;</div>
                         <p class="text-dark-300 text-sm">NemaStudio.ai</p>
                     </div>
                 </div>
-                <div class="p-6">
+                <div class="p-4 sm:p-6">
                     <div class="flex items-center gap-2 mb-3">
-                        <h3 class="text-xl font-bold text-white">NemaStudio.ai</h3>
+                        <h3 class="text-lg sm:text-xl font-bold text-white">NemaStudio.ai</h3>
                         <span class="text-xs bg-purple/10 text-purple px-2 py-0.5 rounded-full">Web Platform</span>
                     </div>
                     <p class="text-dark-200 text-sm mb-4">
@@ -422,45 +405,17 @@
                 </div>
             </div>
 
-            <!-- Dynera Labs Website -->
-            <div class="reveal glass rounded-2xl overflow-hidden card-hover group">
-                <div class="h-48 bg-gradient-to-br from-cyan/20 to-accent/20 flex items-center justify-center">
-                    <div class="text-center">
-                        <div class="text-5xl mb-2">&#127760;</div>
-                        <p class="text-dark-300 text-sm">dyneralabs.com</p>
-                    </div>
-                </div>
-                <div class="p-6">
-                    <div class="flex items-center gap-2 mb-3">
-                        <h3 class="text-xl font-bold text-white">Dynera Labs Website</h3>
-                        <span class="text-xs bg-cyan/10 text-cyan px-2 py-0.5 rounded-full">E-Commerce</span>
-                    </div>
-                    <p class="text-dark-200 text-sm mb-4">
-                        Full e-commerce platform with Stripe Checkout, eBay marketplace integration, blog CMS, user auth with 2FA, analytics dashboards, and bidirectional IoT device sync.
-                    </p>
-                    <div class="flex flex-wrap gap-2 mb-4">
-                        <span class="text-xs px-2 py-1 rounded bg-dark-500 text-dark-200">Flask</span>
-                        <span class="text-xs px-2 py-1 rounded bg-dark-500 text-dark-200">Tailwind CSS</span>
-                        <span class="text-xs px-2 py-1 rounded bg-dark-500 text-dark-200">Alpine.js</span>
-                        <span class="text-xs px-2 py-1 rounded bg-dark-500 text-dark-200">Stripe</span>
-                        <span class="text-xs px-2 py-1 rounded bg-dark-500 text-dark-200">eBay API</span>
-                        <span class="text-xs px-2 py-1 rounded bg-dark-500 text-dark-200">Docker</span>
-                    </div>
-                    <a href="https://dyneralabs.com" target="_blank" class="text-accent text-sm font-medium hover:underline">dyneralabs.com &rarr;</a>
-                </div>
-            </div>
-
             <!-- ISS Spaceflight Hardware -->
             <div class="reveal glass rounded-2xl overflow-hidden card-hover group">
-                <div class="h-48 bg-gradient-to-br from-emerald-500/20 to-accent/20 flex items-center justify-center">
+                <div class="h-36 sm:h-48 bg-gradient-to-br from-emerald-500/20 to-accent/20 flex items-center justify-center">
                     <div class="text-center">
                         <div class="text-5xl mb-2">&#128640;</div>
                         <p class="text-dark-300 text-sm">ISS Payload</p>
                     </div>
                 </div>
-                <div class="p-6">
+                <div class="p-4 sm:p-6">
                     <div class="flex items-center gap-2 mb-3">
-                        <h3 class="text-xl font-bold text-white">ISS Spaceflight Hardware</h3>
+                        <h3 class="text-lg sm:text-xl font-bold text-white">ISS Spaceflight Hardware</h3>
                         <span class="text-xs bg-emerald-400/10 text-emerald-400 px-2 py-0.5 rounded-full">Space Biology</span>
                     </div>
                     <p class="text-dark-200 text-sm mb-4">
@@ -483,17 +438,17 @@
 <!-- ═══════════════════════════════════════════════ -->
 <!-- PUBLICATIONS -->
 <!-- ═══════════════════════════════════════════════ -->
-<section id="publications" class="py-24 px-6 bg-dark-900/50">
+<section id="publications" class="py-16 sm:py-24 px-4 sm:px-6 bg-dark-900/50">
     <div class="max-w-4xl mx-auto">
-        <div class="reveal text-center mb-16">
-            <p class="text-accent font-mono text-sm tracking-widest uppercase mb-2">Research</p>
-            <h2 class="text-4xl font-bold">Publications & Patents</h2>
-            <p class="text-dark-300 mt-4">103+ citations &middot; h-index: 5 &middot; i10-index: 3</p>
+        <div class="reveal text-center mb-10 sm:mb-16">
+            <p class="text-accent font-mono text-xs sm:text-sm tracking-widest uppercase mb-2">Research</p>
+            <h2 class="text-3xl sm:text-4xl font-bold">Publications & Patents</h2>
+            <p class="text-dark-300 text-sm sm:text-base mt-3 sm:mt-4">103+ citations &middot; h-index: 5 &middot; i10-index: 3</p>
         </div>
 
         <!-- Publications -->
         <div class="space-y-4">
-            <div class="reveal glass rounded-xl p-5 card-hover">
+            <div class="reveal glass rounded-xl p-4 sm:p-5 card-hover">
                 <div class="flex items-start justify-between gap-4">
                     <div>
                         <h4 class="text-white font-medium text-sm leading-relaxed">Mitochondrial hydrogen sulfide supplementation improves health in the <em>C. elegans</em> Duchenne muscular dystrophy model</h4>
@@ -507,7 +462,7 @@
                 </div>
             </div>
 
-            <div class="reveal glass rounded-xl p-5 card-hover">
+            <div class="reveal glass rounded-xl p-4 sm:p-5 card-hover">
                 <div class="flex items-start justify-between gap-4">
                     <div>
                         <h4 class="text-white font-medium text-sm leading-relaxed">Mitochondrial sulfide promotes life span and health span through distinct mechanisms in developing versus adult treated <em>C. elegans</em></h4>
@@ -521,7 +476,7 @@
                 </div>
             </div>
 
-            <div class="reveal glass rounded-xl p-5 card-hover">
+            <div class="reveal glass rounded-xl p-4 sm:p-5 card-hover">
                 <div class="flex items-start justify-between gap-4">
                     <div>
                         <h4 class="text-white font-medium text-sm leading-relaxed">Microfluidics-integrated spaceflight hardware for measuring muscle strength of <em>C. elegans</em> on the ISS</h4>
@@ -535,7 +490,7 @@
                 </div>
             </div>
 
-            <div class="reveal glass rounded-xl p-5 card-hover">
+            <div class="reveal glass rounded-xl p-4 sm:p-5 card-hover">
                 <div class="flex items-start justify-between gap-4">
                     <div>
                         <h4 class="text-white font-medium text-sm leading-relaxed">Spaceflight induces strength decline in <em>Caenorhabditis elegans</em></h4>
@@ -549,7 +504,7 @@
                 </div>
             </div>
 
-            <div class="reveal glass rounded-xl p-5 card-hover">
+            <div class="reveal glass rounded-xl p-4 sm:p-5 card-hover">
                 <div class="flex items-start justify-between gap-4">
                     <div>
                         <h4 class="text-white font-medium text-sm leading-relaxed">A compact imaging platform for conducting <em>C. elegans</em> phenotypic assays on Earth and in spaceflight</h4>
@@ -563,7 +518,7 @@
                 </div>
             </div>
 
-            <div class="reveal glass rounded-xl p-5 card-hover">
+            <div class="reveal glass rounded-xl p-4 sm:p-5 card-hover">
                 <div class="flex items-start justify-between gap-4">
                     <div>
                         <h4 class="text-white font-medium text-sm leading-relaxed">Senotherapeutic peptide reduces skin biological age and improves skin health markers</h4>
@@ -608,16 +563,16 @@
 <!-- ═══════════════════════════════════════════════ -->
 <!-- SKILLS -->
 <!-- ═══════════════════════════════════════════════ -->
-<section id="skills" class="py-24 px-6">
+<section id="skills" class="py-16 sm:py-24 px-4 sm:px-6">
     <div class="max-w-6xl mx-auto">
-        <div class="reveal text-center mb-16">
-            <p class="text-accent font-mono text-sm tracking-widest uppercase mb-2">Expertise</p>
-            <h2 class="text-4xl font-bold">Technical Skills</h2>
+        <div class="reveal text-center mb-10 sm:mb-16">
+            <p class="text-accent font-mono text-xs sm:text-sm tracking-widest uppercase mb-2">Expertise</p>
+            <h2 class="text-3xl sm:text-4xl font-bold">Technical Skills</h2>
         </div>
 
-        <div class="grid md:grid-cols-3 gap-6">
+        <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6">
             <!-- Engineering -->
-            <div class="reveal glass rounded-xl p-6 card-hover">
+            <div class="reveal glass rounded-xl p-4 sm:p-6 card-hover">
                 <div class="w-10 h-10 rounded-lg bg-accent/10 flex items-center justify-center mb-4">
                     <svg class="w-5 h-5 text-accent" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M11.49 3.17c-.38-1.56-2.6-1.56-2.98 0a1.532 1.532 0 01-2.286.948c-1.372-.836-2.942.734-2.106 2.106.54.886.061 2.042-.947 2.287-1.561.379-1.561 2.6 0 2.978a1.532 1.532 0 01.947 2.287c-.836 1.372.734 2.942 2.106 2.106a1.532 1.532 0 012.287.947c.379 1.561 2.6 1.561 2.978 0a1.533 1.533 0 012.287-.947c1.372.836 2.942-.734 2.106-2.106a1.533 1.533 0 01.947-2.287c1.561-.379 1.561-2.6 0-2.978a1.532 1.532 0 01-.947-2.287c.836-1.372-.734-2.942-2.106-2.106a1.532 1.532 0 01-2.287-.947zM10 13a3 3 0 100-6 3 3 0 000 6z" clip-rule="evenodd"/></svg>
                 </div>
@@ -637,7 +592,7 @@
             </div>
 
             <!-- Software -->
-            <div class="reveal glass rounded-xl p-6 card-hover">
+            <div class="reveal glass rounded-xl p-4 sm:p-6 card-hover">
                 <div class="w-10 h-10 rounded-lg bg-purple/10 flex items-center justify-center mb-4">
                     <svg class="w-5 h-5 text-purple" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M12.316 3.051a1 1 0 01.633 1.265l-4 12a1 1 0 11-1.898-.632l4-12a1 1 0 011.265-.633zM5.707 6.293a1 1 0 010 1.414L3.414 10l2.293 2.293a1 1 0 11-1.414 1.414l-3-3a1 1 0 010-1.414l3-3a1 1 0 011.414 0zm8.586 0a1 1 0 011.414 0l3 3a1 1 0 010 1.414l-3 3a1 1 0 11-1.414-1.414L16.586 10l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd"/></svg>
                 </div>
@@ -659,7 +614,7 @@
             </div>
 
             <!-- Data & Visualization -->
-            <div class="reveal glass rounded-xl p-6 card-hover">
+            <div class="reveal glass rounded-xl p-4 sm:p-6 card-hover">
                 <div class="w-10 h-10 rounded-lg bg-cyan/10 flex items-center justify-center mb-4">
                     <svg class="w-5 h-5 text-cyan" fill="currentColor" viewBox="0 0 20 20"><path d="M2 11a1 1 0 011-1h2a1 1 0 011 1v5a1 1 0 01-1 1H3a1 1 0 01-1-1v-5zM8 7a1 1 0 011-1h2a1 1 0 011 1v9a1 1 0 01-1 1H9a1 1 0 01-1-1V7zM14 4a1 1 0 011-1h2a1 1 0 011 1v12a1 1 0 01-1 1h-2a1 1 0 01-1-1V4z"/></svg>
                 </div>
@@ -680,27 +635,27 @@
 <!-- ═══════════════════════════════════════════════ -->
 <!-- CONTACT -->
 <!-- ═══════════════════════════════════════════════ -->
-<section id="contact" class="py-24 px-6 bg-dark-900/50">
+<section id="contact" class="py-16 sm:py-24 px-4 sm:px-6 bg-dark-900/50">
     <div class="max-w-2xl mx-auto text-center">
         <div class="reveal">
-            <p class="text-accent font-mono text-sm tracking-widest uppercase mb-2">Get in Touch</p>
-            <h2 class="text-4xl font-bold mb-6">Let's Connect</h2>
-            <p class="text-dark-200 mb-10 leading-relaxed">
+            <p class="text-accent font-mono text-xs sm:text-sm tracking-widest uppercase mb-2">Get in Touch</p>
+            <h2 class="text-3xl sm:text-4xl font-bold mb-4 sm:mb-6">Let's Connect</h2>
+            <p class="text-dark-200 text-sm sm:text-base mb-8 sm:mb-10 leading-relaxed">
                 Interested in collaborating on research, engineering projects, or just want to chat about microfluidics, space biology, or IoT? I'd love to hear from you.
             </p>
         </div>
 
-        <div class="reveal flex flex-wrap justify-center gap-4">
-            <a href="mailto:anupom458@gmail.com" class="flex items-center gap-2 px-6 py-3 bg-accent hover:bg-accent-dark text-white font-medium rounded-lg transition shadow-lg shadow-accent/20">
-                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"/><path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"/></svg>
+        <div class="reveal flex flex-col sm:flex-row flex-wrap justify-center gap-3 sm:gap-4">
+            <a href="mailto:anupom458@gmail.com" class="flex items-center justify-center gap-2 px-5 sm:px-6 py-2.5 sm:py-3 bg-accent hover:bg-accent-dark text-white text-sm sm:text-base font-medium rounded-lg transition shadow-lg shadow-accent/20">
+                <svg class="w-4 h-4 sm:w-5 sm:h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"/><path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"/></svg>
                 anupom458@gmail.com
             </a>
-            <a href="https://www.linkedin.com/in/anupom458/" target="_blank" class="flex items-center gap-2 px-6 py-3 border border-dark-400 hover:border-accent text-dark-100 font-medium rounded-lg transition">
-                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+            <a href="https://www.linkedin.com/in/anupom458/" target="_blank" class="flex items-center justify-center gap-2 px-5 sm:px-6 py-2.5 sm:py-3 border border-dark-400 hover:border-accent text-dark-100 text-sm sm:text-base font-medium rounded-lg transition">
+                <svg class="w-4 h-4 sm:w-5 sm:h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
                 LinkedIn
             </a>
-            <a href="https://scholar.google.com/citations?hl=en&user=4R_-r1EAAAAJ" target="_blank" class="flex items-center gap-2 px-6 py-3 border border-dark-400 hover:border-accent text-dark-100 font-medium rounded-lg transition">
-                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M5.242 13.769L0 9.5 12 0l12 9.5-5.242 4.269C17.548 11.249 14.978 9.5 12 9.5c-2.977 0-5.548 1.748-6.758 4.269zM12 10a7 7 0 100 14 7 7 0 000-14z"/></svg>
+            <a href="https://scholar.google.com/citations?hl=en&user=4R_-r1EAAAAJ" target="_blank" class="flex items-center justify-center gap-2 px-5 sm:px-6 py-2.5 sm:py-3 border border-dark-400 hover:border-accent text-dark-100 text-sm sm:text-base font-medium rounded-lg transition">
+                <svg class="w-4 h-4 sm:w-5 sm:h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M5.242 13.769L0 9.5 12 0l12 9.5-5.242 4.269C17.548 11.249 14.978 9.5 12 9.5c-2.977 0-5.548 1.748-6.758 4.269zM12 10a7 7 0 100 14 7 7 0 000-14z"/></svg>
                 Google Scholar
             </a>
         </div>
