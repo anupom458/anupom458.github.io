@@ -41,6 +41,9 @@ export default function Hero() {
               <a href="#contact" className="px-6 py-3 border border-dark-400 hover:border-accent text-dark-100 font-medium rounded-lg transition">
                 Get in Touch
               </a>
+              <a href="/Taslim_Anupom_Resume.pdf" target="_blank" rel="noopener noreferrer" className="px-6 py-3 border border-dark-400 hover:border-accent text-dark-100 font-medium rounded-lg transition">
+                Resume / CV
+              </a>
             </motion.div>
           </div>
           <div className="flex-shrink-0">
