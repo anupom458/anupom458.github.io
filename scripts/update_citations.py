@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Fetches citation metrics from Google Scholar and updates index.html.
+Fetches citation metrics from Google Scholar and updates data/citations.json.
 Uses OpenAlex as fallback if Google Scholar is unavailable.
 Run manually or via GitHub Actions (weekly schedule).
 
@@ -14,7 +14,7 @@ import urllib.request
 
 GOOGLE_SCHOLAR_USER = "4R_-r1EAAAAJ"
 OPENALEX_AUTHOR_ID = "A5016067585"
-HTML_FILE = "index.html"
+JSON_FILE = "data/citations.json"
 
 # Map papers to unique keywords that appear in BOTH Google Scholar titles
 # (which are truncated) AND the portfolio HTML titles
@@ -131,58 +131,6 @@ def match_paper_citation(papers, keyword):
     return None
 
 
-def update_html(html, author_metrics, papers):
-    """Update all citation metrics in the HTML."""
-    total = author_metrics["cited_by_count"]
-    h_index = author_metrics["h_index"]
-    i10_index = author_metrics["i10_index"]
-    pub_count = author_metrics["works_count"]
-
-    # 1. Hero stat: citations (the stat-number before "Citations" label)
-    html = re.sub(
-        r'(stat-number">)\d+\+?(</div>\s*<div[^>]*>Citations)',
-        rf"\g<1>{total}+\2",
-        html,
-    )
-
-    # 2. Hero stat: publications count — NOT auto-updated
-    # Google Scholar includes dissertations and non-peer-reviewed items.
-    # Keep this curated manually.
-
-    # 3. About section: "(XXX+ citations)" text
-    html = re.sub(
-        r"\(\d+\+?\s*citations\)",
-        f"({total}+ citations)",
-        html,
-    )
-
-    # 4. Publications header: "XXX+ citations · h-index: X · i10-index: Y"
-    html = re.sub(
-        r"\d+\+?\s*citations\s*&middot;\s*h-index:\s*\d+\s*&middot;\s*i10-index:\s*\d+",
-        f"{total}+ citations &middot; h-index: {h_index} &middot; i10-index: {i10_index}",
-        html,
-    )
-
-    # 5. Per-paper citation counts
-    for keyword in PAPER_KEYWORDS:
-        count = match_paper_citation(papers, keyword)
-        if count is None:
-            print(f"  Warning: Could not match paper '{keyword}'")
-            continue
-
-        pattern = re.compile(
-            rf"({re.escape(keyword)}.*?stat-number\">)(\d+)(</div>)",
-            re.DOTALL | re.IGNORECASE,
-        )
-        match = pattern.search(html)
-        if match:
-            html = html[: match.start(2)] + str(count) + html[match.end(2) :]
-        else:
-            print(f"  Warning: No stat-number found near '{keyword}'")
-
-    return html
-
-
 def main():
     print("Fetching citation metrics...")
 
@@ -205,18 +153,36 @@ def main():
     print(f"  i10-index: {author_metrics['i10_index']}")
     print(f"  Papers found: {len(papers)}")
 
-    print(f"\nReading {HTML_FILE}...")
-    with open(HTML_FILE, "r") as f:
-        original = f.read()
+    # Build JSON data
+    paper_data = {}
+    for keyword in PAPER_KEYWORDS:
+        count = match_paper_citation(papers, keyword)
+        if count is not None:
+            paper_data[keyword] = count
+        else:
+            print(f"  Warning: Could not match paper '{keyword}'")
 
-    updated = update_html(original, author_metrics, papers)
+    data = {
+        "total_citations": author_metrics["cited_by_count"],
+        "h_index": author_metrics["h_index"],
+        "i10_index": author_metrics["i10_index"],
+        "papers": paper_data,
+    }
 
-    if original == updated:
+    # Read existing to check for changes
+    try:
+        with open(JSON_FILE, "r") as f:
+            existing = json.load(f)
+    except (FileNotFoundError, json.JSONDecodeError):
+        existing = None
+
+    if existing == data:
         print("No changes needed — metrics are up to date.")
     else:
-        with open(HTML_FILE, "w") as f:
-            f.write(updated)
-        print("Updated index.html with new metrics.")
+        with open(JSON_FILE, "w") as f:
+            json.dump(data, f, indent=2)
+            f.write("\n")
+        print(f"Updated {JSON_FILE} with new metrics.")
 
 
 if __name__ == "__main__":
