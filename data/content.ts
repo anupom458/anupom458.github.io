@@ -185,8 +185,8 @@ export const publications: Publication[] = [
   },
   {
     title: "NemaLife Machine: An automated microfluidic system for whole-life studies in _C. elegans_",
-    authors: "Anupom, T.; Rahman, M.; Vanapalli, S.A.; et al.",
-    journal: "Conference/Preprint, 2019",
+    authors: "Anupom, T.; et al.",
+    journal: "Conference Contribution, Lancaster University EPrints, 2019",
     keyword: "NemaLife Machine",
   },
 ];
