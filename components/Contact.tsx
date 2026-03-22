@@ -28,6 +28,10 @@ export default function Contact() {
               className="flex items-center justify-center gap-2 px-5 sm:px-6 py-2.5 sm:py-3 border border-dark-400 hover:border-accent text-dark-100 text-sm sm:text-base font-medium rounded-lg transition">
               Google Scholar
             </a>
+            <a href={siteConfig.dyneralabs} target="_blank" rel="noopener noreferrer"
+              className="flex items-center justify-center gap-2 px-5 sm:px-6 py-2.5 sm:py-3 border border-dark-400 hover:border-accent text-dark-100 text-sm sm:text-base font-medium rounded-lg transition">
+              Dynera Labs
+            </a>
           </div>
         </ScrollReveal>
         <ScrollReveal delay={0.3}>

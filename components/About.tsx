@@ -36,6 +36,11 @@ export default function About() {
                   {fact.text}
                 </div>
               ))}
+              <div className="mt-4 flex gap-2">
+                <span className="text-xs px-3 py-1 rounded-full bg-accent/10 text-accent border border-accent/20">
+                  EIT — Engineer In Training
+                </span>
+              </div>
             </div>
           </ScrollReveal>
           <ScrollReveal delay={0.2} className="md:col-span-3 space-y-5 text-dark-200 leading-relaxed">

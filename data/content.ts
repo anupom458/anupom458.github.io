@@ -3,28 +3,29 @@ export const siteConfig = {
   title: "Ph.D.",
   tagline: "Building systems at the intersection of microfluidics, software, and space biology.",
   subtitle: "Engineer. Researcher. Builder.",
-  location: "Wolfforth, TX",
+  location: "Lubbock, TX",
   phone: "(713) 355-7542",
   email: "anupom458@gmail.com",
   linkedin: "https://www.linkedin.com/in/anupom458/",
   scholar: "https://scholar.google.com/citations?hl=en&user=4R_-r1EAAAAJ",
   github: "https://anupom458.github.io",
+  dyneralabs: "https://dyneralabs.com",
 };
 
 export const stats = {
   publications: 7,
-  patents: 2,
+  patents: 3,
   yearsExp: "8+",
 };
 
 export const about = {
   bio: [
-    "I build systems that bridge hardware and software — from microfluidic devices deployed on the International Space Station to IoT consumer products I designed, manufactured, and shipped.",
+    "I build systems that bridge hardware and software — from microfluidic devices deployed on the International Space Station to IoT consumer products I designed, manufactured, and shipped. As Founder of Dynera Labs, I bring ideas from concept to manufactured product.",
     "As Lead Platform Developer at NemaLife Inc., I architect scalable platforms for high-throughput _C. elegans_ phenotyping, lead a 14-person cross-functional team, and built NemaStudio.ai — our data analysis web platform using React 18, Plotly.js, and MUI. My collaborations with NASA and ESA on spaceflight payloads have resulted in 7 peer-reviewed publications (105+ citations) and a granted US patent.",
     "I hold a Ph.D. in Electrical Engineering from Texas Tech University, where my dissertation on integrated microfluidic platforms led directly to the founding of NemaLife Inc.",
   ],
   quickFacts: [
-    { icon: "location" as const, text: "Wolfforth, TX" },
+    { icon: "location" as const, text: "Lubbock, TX" },
     { icon: "education" as const, text: "Ph.D., Electrical Engineering" },
     { icon: "work" as const, text: "Lead Platform Developer, NemaLife" },
   ],
@@ -41,11 +42,25 @@ export interface ExperienceItem {
 
 export const experience: ExperienceItem[] = [
   {
+    company: "Dynera Labs",
+    role: "Founder",
+    period: "2024 – Present",
+    color: "#f59e0b",
+    isActive: true,
+    bullets: [
+      "Founded an engineering and technology company specializing in integrated hardware-software product development",
+      "Built the Prestige Wall — a smart display system with 25 OLEDs, Raspberry Pi, ESP32, and real-time price tracking from multiple marketplaces",
+      "Developed the Vault web platform (Flask + SQLite) — a collection tracker supporting 7 grading companies, with ML-powered grading via GradeLab (YOLO/Ultralytics)",
+      "Shipped an iOS app to the App Store using Capacitor, with push notifications (APNs), WidgetKit home screen widgets, and SwiftUI components",
+      "Built e-commerce platform at dyneralabs.com with Stripe Checkout, eBay OAuth 2.0 integration, and social automation",
+      "Containerized with Docker Compose (Flask/Gunicorn + Nginx + Cloudflared), 400+ automated tests",
+    ],
+  },
+  {
     company: "NemaLife Inc.",
     role: "Lead Platform Developer",
     period: "Jan 2023 – Present",
     color: "#8b5cf6",
-    isActive: true,
     bullets: [
       "Architected scalable microfluidics-integrated platforms for automated _C. elegans_ assays",
       "Led 10-phase redesign of NemaStudio.ai (React 18, MUI, Plotly.js, WebSocket)",
@@ -115,10 +130,10 @@ export const featuredWork: FeaturedProject[] = [
   },
   {
     title: "Dynera Labs",
-    badge: "IoT Product",
+    badge: "Hardware + Software",
     badgeColor: "amber",
-    description: "Founded and built a hardware-software company. Designed the 'Prestige Wall' — a collectible card price tracking display with 25 OLEDs, Raspberry Pi, and ESP32. Built the e-commerce platform with Stripe, eBay integration, and 518+ tests.",
-    tech: ["Flask", "Raspberry Pi", "ESP32", "Docker", "Stripe", "Tailwind CSS"],
+    description: "Founded an engineering and technology company specializing in integrated hardware-software product development. Built the Prestige Wall (25-OLED display system with RPi + ESP32), the Vault web platform (collection tracker for 7 grading companies), an iOS app (live on App Store via Capacitor), and GradeLab — an ML-powered card grading model using YOLO/Ultralytics.",
+    tech: ["Flask", "Raspberry Pi", "ESP32", "Capacitor/iOS", "YOLO/ML", "Docker", "Stripe", "SQLite", "WebSocket", "APNs"],
     footer: "dyneralabs.com · Founder",
     gradient: "from-amber-500/20 to-accent/20",
   },
@@ -168,11 +183,18 @@ export const publications: Publication[] = [
     journal: "bioRxiv, 2020",
     keyword: "Senotherapeutic peptide",
   },
+  {
+    title: "NemaLife Machine: An automated microfluidic system for whole-life studies in _C. elegans_",
+    authors: "Anupom, T.; Rahman, M.; Vanapalli, S.A.; et al.",
+    journal: "Conference/Preprint, 2019",
+    keyword: "NemaLife Machine",
+  },
 ];
 
 export const patents = [
   { title: "Automated Microfluidic System for Lifespan and Healthspan Analysis in Nematodes", detail: "US Patent 12,529,693 · Granted 2026", status: "granted" as const },
   { title: "A Rapid Microfluidic in-vivo Bioassay for Screening Functional Ingredients for Improving Gut Health", detail: "2023 · Pending", status: "pending" as const },
+  { title: "Smart Multi-Display System for Dynamic Trading Card Presentation", detail: "Provisional · Filed November 2025", status: "pending" as const },
 ];
 
 export interface SkillCategory {
@@ -190,11 +212,16 @@ export const skillCategories: SkillCategory[] = [
   {
     name: "Software",
     color: "purple",
-    skills: ["Python", "JavaScript", "React", "Flask", "MATLAB", "SQL", "Tailwind CSS", "Docker", "Git", "Linux", "REST APIs", "CI/CD"],
+    skills: ["Python", "JavaScript", "React", "Flask", "MATLAB", "SQL", "Tailwind CSS", "Docker", "Git", "Linux", "REST APIs", "CI/CD", "Capacitor/iOS", "SwiftUI", "SQLite", "Three.js"],
   },
   {
     name: "Data & Visualization",
     color: "cyan",
-    skills: ["Plotly.js", "Chart.js", "Image Processing", "Data Pipelines", "WebSocket", "Framer Motion"],
+    skills: ["Plotly.js", "Chart.js", "Image Processing", "Data Pipelines", "WebSocket", "Framer Motion", "OpenCV", "YOLO/ML"],
+  },
+  {
+    name: "DevOps & Tools",
+    color: "amber",
+    skills: ["Docker", "CI/CD", "Shell/Bash", "Cloudflare", "Shapr3D (CAD)", "Nginx", "APNs"],
   },
 ];
