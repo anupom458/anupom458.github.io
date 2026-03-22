@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import ScrollReveal from "./ScrollReveal";
+import RichText from "./RichText";
 import { about } from "@/data/content";
 
 const iconPaths: Record<string, string> = {
@@ -38,9 +39,9 @@ export default function About() {
             </div>
           </ScrollReveal>
           <ScrollReveal delay={0.2} className="md:col-span-3 space-y-5 text-dark-200 leading-relaxed">
-            <p className="text-lg text-white font-medium">{about.bio[0]}</p>
-            <p>{about.bio[1]}</p>
-            <p>{about.bio[2]}</p>
+            <p className="text-lg text-white font-medium"><RichText>{about.bio[0]}</RichText></p>
+            <p><RichText>{about.bio[1]}</RichText></p>
+            <p><RichText>{about.bio[2]}</RichText></p>
           </ScrollReveal>
         </div>
       </div>

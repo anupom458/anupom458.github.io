@@ -20,7 +20,7 @@ export const stats = {
 export const about = {
   bio: [
     "I build systems that bridge hardware and software — from microfluidic devices deployed on the International Space Station to IoT consumer products I designed, manufactured, and shipped.",
-    "As Lead Platform Developer at NemaLife Inc., I architect scalable platforms for high-throughput C. elegans phenotyping, lead a 14-person cross-functional team, and built NemaStudio.ai — our data analysis web platform using React 18, Plotly.js, and MUI. My collaborations with NASA and ESA on spaceflight payloads have resulted in 7 peer-reviewed publications (103+ citations) and a granted US patent.",
+    "As Lead Platform Developer at NemaLife Inc., I architect scalable platforms for high-throughput _C. elegans_ phenotyping, lead a 14-person cross-functional team, and built NemaStudio.ai — our data analysis web platform using React 18, Plotly.js, and MUI. My collaborations with NASA and ESA on spaceflight payloads have resulted in 7 peer-reviewed publications (105+ citations) and a granted US patent.",
     "I hold a Ph.D. in Electrical Engineering from Texas Tech University, where my dissertation on integrated microfluidic platforms led directly to the founding of NemaLife Inc.",
   ],
   quickFacts: [
@@ -47,7 +47,7 @@ export const experience: ExperienceItem[] = [
     color: "#8b5cf6",
     isActive: true,
     bullets: [
-      "Architected scalable microfluidics-integrated platforms for automated C. elegans assays",
+      "Architected scalable microfluidics-integrated platforms for automated _C. elegans_ assays",
       "Led 10-phase redesign of NemaStudio.ai (React 18, MUI, Plotly.js, WebSocket)",
       "Managed 14-member cross-functional team (6 R&D engineers, 8 data analysts)",
       "Reduced platform downtime 40% through improved troubleshooting protocols",
@@ -79,7 +79,7 @@ export const experience: ExperienceItem[] = [
 ];
 
 export const education = [
-  { degree: "Ph.D., Electrical Engineering", year: "May 2022", school: "Texas Tech University", dissertation: "Development of Integrated Microfluidic Platforms for Phenotyping Studies in C. elegans" },
+  { degree: "Ph.D., Electrical Engineering", year: "May 2022", school: "Texas Tech University", dissertation: "Development of Integrated Microfluidic Platforms for Phenotyping Studies in _C. elegans_" },
   { degree: "M.S., Electrical Engineering", year: "May 2020", school: "Texas Tech University" },
   { degree: "B.S., Electrical Engineering", year: "Dec 2017", school: "Texas Tech University" },
 ];
@@ -108,10 +108,19 @@ export const featuredWork: FeaturedProject[] = [
     title: "ISS Spaceflight Hardware",
     badge: "Space Biology",
     badgeColor: "emerald",
-    description: "Collaborated with NASA and ESA to design, validate, and deploy microfluidics-integrated hardware for measuring C. elegans muscle strength aboard the International Space Station.",
+    description: "Collaborated with NASA and ESA to design, validate, and deploy microfluidics-integrated hardware for measuring _C. elegans_ muscle strength aboard the International Space Station.",
     tech: ["Microfluidics", "NASA", "ESA", "PDMS", "PCB Design"],
     footer: "Published in npj Microgravity",
     gradient: "from-emerald-500/20 to-accent/20",
+  },
+  {
+    title: "Dynera Labs",
+    badge: "IoT Product",
+    badgeColor: "amber",
+    description: "Founded and built a hardware-software company. Designed the 'Prestige Wall' — a collectible card price tracking display with 25 OLEDs, Raspberry Pi, and ESP32. Built the e-commerce platform with Stripe, eBay integration, and 518+ tests.",
+    tech: ["Flask", "Raspberry Pi", "ESP32", "Docker", "Stripe", "Tailwind CSS"],
+    footer: "dyneralabs.com · Founder",
+    gradient: "from-amber-500/20 to-accent/20",
   },
 ];
 
@@ -124,19 +133,19 @@ export interface Publication {
 
 export const publications: Publication[] = [
   {
-    title: "Mitochondrial hydrogen sulfide supplementation improves health in the C. elegans Duchenne muscular dystrophy model",
+    title: "Mitochondrial hydrogen sulfide supplementation improves health in the _C. elegans_ Duchenne muscular dystrophy model",
     authors: "Ellwood, R.A.; Hewitt, J.E.; ...; Anupom, T.; et al.",
     journal: "Proc. Natl. Acad. Sci. (PNAS), vol. 118, no. 9, 2021",
     keyword: "hydrogen sulfide supplementation",
   },
   {
-    title: "Mitochondrial sulfide promotes life span and health span through distinct mechanisms in developing versus adult treated C. elegans",
+    title: "Mitochondrial sulfide promotes life span and health span through distinct mechanisms in developing versus adult treated _C. elegans_",
     authors: "Vintila, A.R.; Slade, L.; ...; Anupom, T.; et al.",
     journal: "Proc. Natl. Acad. Sci. (PNAS), Vol. 120, No. 32, 2023",
     keyword: "Mitochondrial sulfide promotes life span",
   },
   {
-    title: "Microfluidics-integrated spaceflight hardware for measuring muscle strength of C. elegans on the ISS",
+    title: "Microfluidics-integrated spaceflight hardware for measuring muscle strength of _C. elegans_ on the ISS",
     authors: "Soni, P.; Anupom, T.; Lesanpezeshki, L.; Rahman, M.; et al.",
     journal: "npj Microgravity, vol. 8, no. 1, 2022",
     keyword: "Microfluidics-integrated spaceflight hardware",
@@ -148,7 +157,7 @@ export const publications: Publication[] = [
     keyword: "Spaceflight induces strength decline",
   },
   {
-    title: "A compact imaging platform for conducting C. elegans phenotypic assays on Earth and in spaceflight",
+    title: "A compact imaging platform for conducting _C. elegans_ phenotypic assays on Earth and in spaceflight",
     authors: "Anupom, T.; Vanapalli, S.A.",
     journal: "Life, Vol. 13, no. 1, 2023",
     keyword: "compact imaging platform",

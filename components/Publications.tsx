@@ -1,6 +1,7 @@
 "use client";
 
 import ScrollReveal from "./ScrollReveal";
+import RichText from "./RichText";
 import AnimatedCounter from "./AnimatedCounter";
 import { publications, patents } from "@/data/content";
 import citations from "@/data/citations.json";
@@ -28,7 +29,7 @@ export default function Publications() {
               <div className="glass rounded-xl p-4 sm:p-5 transition-all hover:translate-y-[-4px] hover:shadow-[0_20px_40px_rgba(0,0,0,0.3)]">
                 <div className="flex items-start justify-between gap-4">
                   <div>
-                    <h4 className="text-white font-medium text-sm leading-relaxed">{pub.title}</h4>
+                    <h4 className="text-white font-medium text-sm leading-relaxed"><RichText>{pub.title}</RichText></h4>
                     <p className="text-dark-300 text-xs mt-1">{pub.authors}</p>
                     <p className="text-dark-400 text-xs mt-1">{pub.journal}</p>
                   </div>

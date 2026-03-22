@@ -1,6 +1,7 @@
 "use client";
 
 import ScrollReveal from "./ScrollReveal";
+import RichText from "./RichText";
 import { experience, education } from "@/data/content";
 
 export default function Experience() {
@@ -30,7 +31,7 @@ export default function Experience() {
                   <ul className="space-y-2 text-sm text-dark-200">
                     {item.bullets.map((bullet, j) => (
                       <li key={j} className="flex gap-2">
-                        <span className="mt-1" style={{ color: item.color }}>&#9654;</span>{bullet}
+                        <span className="mt-1" style={{ color: item.color }}>&#9654;</span><RichText>{bullet}</RichText>
                       </li>
                     ))}
                   </ul>
@@ -51,7 +52,7 @@ export default function Experience() {
                     <div key={i}>
                       <p className="text-white font-medium">{edu.degree} <span className="text-dark-300">({edu.year})</span></p>
                       <p className="text-dark-300">{edu.school}</p>
-                      {edu.dissertation && <p className="text-dark-300 italic text-xs mt-1">Dissertation: &ldquo;{edu.dissertation}&rdquo;</p>}
+                      {edu.dissertation && <p className="text-dark-300 italic text-xs mt-1">Dissertation: &ldquo;<RichText>{edu.dissertation}</RichText>&rdquo;</p>}
                     </div>
                   ))}
                 </div>
