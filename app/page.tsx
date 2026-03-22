@@ -1,9 +1,25 @@
+import Navigation from "@/components/Navigation";
+import Hero from "@/components/Hero";
+import About from "@/components/About";
+import Experience from "@/components/Experience";
+import FeaturedWork from "@/components/FeaturedWork";
+import Publications from "@/components/Publications";
+import Skills from "@/components/Skills";
+import Contact from "@/components/Contact";
+import Footer from "@/components/Footer";
+
 export default function Home() {
   return (
     <main>
-      <section className="min-h-screen flex items-center justify-center">
-        <h1 className="text-4xl font-bold text-white">Portfolio — Building...</h1>
-      </section>
+      <Navigation />
+      <Hero />
+      <About />
+      <Experience />
+      <FeaturedWork />
+      <Publications />
+      <Skills />
+      <Contact />
+      <Footer />
     </main>
   );
 }
