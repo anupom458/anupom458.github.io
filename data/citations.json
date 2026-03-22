@@ -1,12 +1,12 @@
 {
-  "total_citations": 103,
+  "total_citations": 105,
   "h_index": 5,
-  "i10_index": 3,
+  "i10_index": 4,
   "papers": {
     "hydrogen sulfide supplementation": 47,
-    "Mitochondrial sulfide promotes life span": 19,
+    "Mitochondrial sulfide promotes life span": 20,
     "Microfluidics-integrated spaceflight hardware": 11,
-    "Spaceflight induces strength decline": 9,
+    "Spaceflight induces strength decline": 10,
     "compact imaging platform": 5,
     "Senotherapeutic peptide": 5
   }
