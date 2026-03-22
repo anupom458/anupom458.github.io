@@ -44,7 +44,7 @@ export const experience: ExperienceItem[] = [
   {
     company: "Dynera Labs",
     role: "Founder",
-    period: "2024 – Present",
+    period: "2026 – Present",
     color: "#f59e0b",
     isActive: true,
     bullets: [
