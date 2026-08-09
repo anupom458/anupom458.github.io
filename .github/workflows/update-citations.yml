@@ -7,6 +7,7 @@ on:
 
 permissions:
   contents: write
+  actions: write   # needed to dispatch the deploy workflow below
 
 jobs:
   update-citations:
@@ -40,3 +41,14 @@ jobs:
           git add data/citations.json
           git commit -m "Update citation metrics [automated]"
           git push
+
+      # GitHub deliberately does not trigger workflows from pushes made with
+      # the default GITHUB_TOKEN, to prevent recursive runs. That meant the
+      # commit above never woke deploy.yml, and the live site stayed frozen on
+      # the 2026-03-22 build for months while citations.json kept updating.
+      # Dispatch the deploy explicitly instead.
+      - name: Trigger Pages deploy
+        if: steps.changes.outputs.changed == 'true'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: gh workflow run "Deploy to GitHub Pages" --ref main
