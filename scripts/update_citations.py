@@ -132,17 +132,43 @@ def match_paper_citation(papers, keyword):
     return None
 
 
+def load_existing():
+    try:
+        with open(JSON_FILE, "r") as f:
+            return json.load(f)
+    except (FileNotFoundError, json.JSONDecodeError):
+        return None
+
+
 def main():
     print("Fetching citation metrics...")
+    existing = load_existing()
 
     try:
         author_metrics, papers = fetch_google_scholar()
+        source = "google_scholar"
         print("  Source: Google Scholar")
     except Exception as e:
         print(f"  Google Scholar failed: {e}")
+        # Google Scholar blocks datacenter IPs, including GitHub Actions
+        # runners. OpenAlex indexes fewer citing works, so its counts always
+        # run lower. Letting it quietly overwrite Scholar data regressed the
+        # published count from 120 to 105 for four months in 2026 while every
+        # workflow run reported success. Never downgrade silently again.
+        if existing and existing.get("source") == "google_scholar":
+            print(
+                "::error::Google Scholar unreachable. Refusing to overwrite "
+                "Scholar-sourced data with lower OpenAlex counts. Re-run this "
+                "script from a residential IP to refresh."
+            )
+            sys.exit(1)
         try:
             author_metrics, papers = fetch_openalex_fallback()
-            print("  Source: OpenAlex (fallback)")
+            source = "openalex"
+            print(
+                "::warning::Using OpenAlex fallback. Counts will read lower "
+                "than Google Scholar."
+            )
         except Exception as e2:
             print(f"  OpenAlex also failed: {e2}")
             print("Aborting — no data source available.")
@@ -167,15 +193,9 @@ def main():
         "total_citations": author_metrics["cited_by_count"],
         "h_index": author_metrics["h_index"],
         "i10_index": author_metrics["i10_index"],
+        "source": source,
         "papers": paper_data,
     }
-
-    # Read existing to check for changes
-    try:
-        with open(JSON_FILE, "r") as f:
-            existing = json.load(f)
-    except (FileNotFoundError, json.JSONDecodeError):
-        existing = None
 
     if existing == data:
         print("No changes needed — metrics are up to date.")

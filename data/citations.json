@@ -1,14 +1,15 @@
 {
-  "total_citations": 105,
+  "total_citations": 120,
   "h_index": 6,
   "i10_index": 4,
+  "source": "google_scholar",
   "papers": {
-    "hydrogen sulfide supplementation": 44,
-    "Mitochondrial sulfide promotes life span": 22,
+    "hydrogen sulfide supplementation": 49,
+    "Mitochondrial sulfide promotes life span": 24,
     "Microfluidics-integrated spaceflight hardware": 16,
-    "Spaceflight induces strength decline": 10,
+    "Spaceflight induces strength decline": 12,
     "compact imaging platform": 6,
-    "Senotherapeutic peptide": 7,
+    "Senotherapeutic peptide": 5,
     "NemaLife Machine": 0
   }
 }
