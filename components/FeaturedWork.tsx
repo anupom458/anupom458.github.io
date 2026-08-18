@@ -26,7 +26,7 @@ export default function FeaturedWork() {
               <div className="glass rounded-2xl overflow-hidden group transition-all hover:translate-y-[-4px] hover:shadow-[0_20px_40px_rgba(0,0,0,0.3)] hover:border-accent/30">
                 <div className={`h-36 sm:h-48 bg-gradient-to-br ${project.gradient} flex items-center justify-center`}>
                   <div className="text-center">
-                    <div className="text-5xl mb-2">{project.title === "NemaStudio.ai" ? "🔬" : project.title === "Dynera Labs" ? "⚡" : "🚀"}</div>
+                    <div className="text-5xl mb-2">{project.emoji}</div>
                     <p className="text-dark-300 text-sm">{project.title}</p>
                   </div>
                 </div>

@@ -104,6 +104,7 @@ export const education = [
 
 export interface FeaturedProject {
   title: string;
+  emoji: string;
   badge: string;
   badgeColor: string;
   description: string;
@@ -114,16 +115,18 @@ export interface FeaturedProject {
 
 export const featuredWork: FeaturedProject[] = [
   {
-    title: "NemaStudio.ai",
-    badge: "Web Platform",
+    title: "PILOT",
+    emoji: "🎛️",
+    badge: "Lab Operations",
     badgeColor: "purple",
-    description: "NemaLife's data analysis platform. Led a complete 10-phase redesign with interactive data visualization, real-time WebSocket updates, and performance optimization.",
-    tech: ["React 18", "MUI v5", "Plotly.js", "Framer Motion", "WebSocket"],
+    description: "NemaLife's lab operations platform, built in-house and used daily by all 17 staff. Unifies project tracking, QC review, inventory, scheduling, analytics, and notifications into a single system of record, and acts as the SSO provider for NemaQC. 385 releases and ~1,980 automated tests since June 2026.",
+    tech: ["React 18", "TypeScript", "Node.js", "SQLite", "Docker", "SSO/RBAC", "SSE"],
     footer: "NemaLife Inc. · Internal Platform",
     gradient: "from-purple/20 to-cyan/20",
   },
   {
     title: "ISS Spaceflight Hardware",
+    emoji: "🚀",
     badge: "Space Biology",
     badgeColor: "emerald",
     description: "Collaborated with NASA and ESA to design, validate, and deploy microfluidics-integrated hardware for measuring _C. elegans_ muscle strength aboard the International Space Station.",
@@ -133,6 +136,7 @@ export const featuredWork: FeaturedProject[] = [
   },
   {
     title: "Dynera Labs",
+    emoji: "⚡",
     badge: "Hardware + Software",
     badgeColor: "amber",
     description: "Founded an engineering and technology company specializing in integrated hardware-software product development. Built the Prestige Wall (25-OLED display system with RPi + ESP32), the Vault web platform (collection tracker for 7 grading companies), an iOS app (live on App Store via Capacitor), and GradeLab — an ML-powered card grading model using YOLO/Ultralytics.",
