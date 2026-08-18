@@ -41,7 +41,7 @@ export default function Skills() {
                   <h3 className="text-dark-50 font-bold mb-3">{cat.name}</h3>
                   <div className="flex flex-wrap gap-2">
                     {cat.skills.map((skill) => (
-                      <span key={skill} className={`text-xs px-2 py-1 rounded ${styles.tag}`}>{skill}</span>
+                      <span key={skill} className={`text-xs px-2 py-1 rounded whitespace-nowrap ${styles.tag}`}>{skill}</span>
                     ))}
                   </div>
                 </div>

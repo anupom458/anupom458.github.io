@@ -31,14 +31,14 @@ export default function FeaturedWork() {
                   </div>
                 </div>
                 <div className="p-4 sm:p-6">
-                  <div className="flex items-center gap-2 mb-3">
+                  <div className="flex flex-wrap items-center gap-x-2 gap-y-1 mb-3">
                     <h3 className="text-lg sm:text-xl font-bold text-dark-50">{project.title}</h3>
-                    <span className={`text-xs px-2 py-0.5 rounded-full ${badgeStyles[project.badgeColor] || ""}`}>{project.badge}</span>
+                    <span className={`text-xs px-2 py-0.5 rounded-full whitespace-nowrap shrink-0 ${badgeStyles[project.badgeColor] || ""}`}>{project.badge}</span>
                   </div>
                   <p className="text-dark-200 text-sm mb-4"><RichText>{project.description}</RichText></p>
                   <div className="flex flex-wrap gap-2 mb-4">
                     {project.tech.map((t) => (
-                      <span key={t} className="text-xs px-2 py-1 rounded bg-dark-500 text-dark-200">{t}</span>
+                      <span key={t} className="text-xs px-2 py-1 rounded whitespace-nowrap bg-dark-500 text-dark-200">{t}</span>
                     ))}
                   </div>
                   <span className="text-dark-300 text-sm">{project.footer}</span>
