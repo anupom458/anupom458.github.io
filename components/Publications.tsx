@@ -29,7 +29,7 @@ export default function Publications() {
               <div className="glass rounded-xl p-4 sm:p-5 transition-all hover:translate-y-[-4px] hover:shadow-[0_20px_40px_rgba(0,0,0,0.3)]">
                 <div className="flex items-start justify-between gap-4">
                   <div>
-                    <h4 className="text-white font-medium text-sm leading-relaxed"><RichText>{pub.title}</RichText></h4>
+                    <h4 className="text-dark-50 font-medium text-sm leading-relaxed"><RichText>{pub.title}</RichText></h4>
                     <p className="text-dark-300 text-xs mt-1">{pub.authors}</p>
                     <p className="text-dark-400 text-xs mt-1">{pub.journal}</p>
                   </div>
@@ -46,7 +46,7 @@ export default function Publications() {
         </div>
         <ScrollReveal delay={0.3}>
           <div className="mt-12">
-            <h3 className="text-lg font-bold text-white mb-4 flex items-center gap-2">
+            <h3 className="text-lg font-bold text-dark-50 mb-4 flex items-center gap-2">
               <svg className="w-5 h-5 text-amber-400" fill="currentColor" viewBox="0 0 20 20">
                 <path fillRule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
               </svg>
@@ -55,7 +55,7 @@ export default function Publications() {
             <div className="space-y-3">
               {patents.map((pat) => (
                 <div key={pat.title} className={`glass rounded-lg p-4 border-l-4 ${pat.status === "granted" ? "border-amber-400" : "border-dark-400"}`}>
-                  <p className="text-white text-sm font-medium">{pat.title}</p>
+                  <p className="text-dark-50 text-sm font-medium">{pat.title}</p>
                   <p className="text-dark-300 text-xs mt-1">{pat.detail}</p>
                 </div>
               ))}

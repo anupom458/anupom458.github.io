@@ -44,7 +44,7 @@ export default function About() {
             </div>
           </ScrollReveal>
           <ScrollReveal delay={0.2} className="md:col-span-3 space-y-5 text-dark-200 leading-relaxed">
-            <p className="text-lg text-white font-medium"><RichText>{about.bio[0]}</RichText></p>
+            <p className="text-lg text-dark-50 font-medium"><RichText>{about.bio[0]}</RichText></p>
             <p><RichText>{about.bio[1]}</RichText></p>
             <p><RichText>{about.bio[2]}</RichText></p>
           </ScrollReveal>

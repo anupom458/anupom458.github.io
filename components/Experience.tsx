@@ -23,7 +23,7 @@ export default function Experience() {
                   style={{ background: item.color, boxShadow: item.isActive ? `0 0 20px ${item.color}40` : undefined }} />
                 <div className="glass rounded-xl p-4 sm:p-6 transition-all hover:translate-y-[-4px] hover:shadow-[0_20px_40px_rgba(0,0,0,0.3)]">
                   <div className="flex flex-wrap items-center justify-between gap-2 mb-3">
-                    <h3 className="text-lg font-bold text-white">{item.company}</h3>
+                    <h3 className="text-lg font-bold text-dark-50">{item.company}</h3>
                     <span className="text-xs font-mono px-3 py-1 rounded-full"
                       style={{ color: item.color, backgroundColor: `${item.color}15` }}>{item.period}</span>
                   </div>
@@ -44,13 +44,13 @@ export default function Experience() {
               <div className="w-3 h-3 rounded-full absolute left-[-29px] top-[6px] z-10 border-2 border-dark-600" style={{ background: "#f59e0b" }} />
               <div className="glass rounded-xl p-4 sm:p-6">
                 <div className="flex flex-wrap items-center justify-between gap-2 mb-3">
-                  <h3 className="text-lg font-bold text-white">Education</h3>
+                  <h3 className="text-lg font-bold text-dark-50">Education</h3>
                   <span className="text-xs font-mono text-amber-400 bg-amber-400/10 px-3 py-1 rounded-full">2012 – 2022</span>
                 </div>
                 <div className="space-y-3 text-sm">
                   {education.map((edu, i) => (
                     <div key={i}>
-                      <p className="text-white font-medium">{edu.degree} <span className="text-dark-300">({edu.year})</span></p>
+                      <p className="text-dark-50 font-medium">{edu.degree} <span className="text-dark-300">({edu.year})</span></p>
                       <p className="text-dark-300">{edu.school}</p>
                       {edu.dissertation && <p className="text-dark-300 italic text-xs mt-1">Dissertation: &ldquo;<RichText>{edu.dissertation}</RichText>&rdquo;</p>}
                     </div>

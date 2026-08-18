@@ -38,7 +38,7 @@ export default function Skills() {
                       <path fillRule="evenodd" d={categoryIcons[cat.name]} clipRule="evenodd" />
                     </svg>
                   </div>
-                  <h3 className="text-white font-bold mb-3">{cat.name}</h3>
+                  <h3 className="text-dark-50 font-bold mb-3">{cat.name}</h3>
                   <div className="flex flex-wrap gap-2">
                     {cat.skills.map((skill) => (
                       <span key={skill} className={`text-xs px-2 py-1 rounded ${styles.tag}`}>{skill}</span>

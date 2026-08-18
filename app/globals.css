@@ -2,23 +2,120 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Custom scrollbar */
-::-webkit-scrollbar { width: 6px; }
-::-webkit-scrollbar-track { background: #0f172a; }
-::-webkit-scrollbar-thumb { background: #334155; border-radius: 3px; }
-::-webkit-scrollbar-thumb:hover { background: #475569; }
+/* ---------------------------------------------------------------------------
+   Theme tokens.
 
-/* Glass morphism utility */
-.glass {
-  background: rgba(15, 23, 42, 0.7);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+   Light is the default: this site is linked from job applications and read by
+   search committees, so it should look like a professional document rather
+   than a developer console. `.dark` on <html> flips it.
+
+   The dark-* scale is semantic, not literal — see tailwind.config.ts.
+   Channels are space-separated RGB so Tailwind opacity modifiers work.
+--------------------------------------------------------------------------- */
+:root {
+  /* surfaces */
+  --c-800: 255 255 255;      /* page background            */
+  --c-900: 244 247 250;      /* alternating section wash   */
+  --c-700: 248 250 252;
+  --c-600: 241 245 249;
+  --c-500: 203 213 225;      /* borders                    */
+  /* text, darkest to lightest */
+  --c-50:   2   6  23;
+  --c-100: 15  23  42;       /* primary body text          */
+  --c-200: 51  65  85;       /* secondary                  */
+  --c-300: 71  85 105;       /* tertiary                   */
+  --c-400: 100 116 139;      /* faint labels (4.8:1 on white) */
+
+  /* accents — slightly deepened so they hold contrast on white */
+  --accent:        37  99 235;
+  --accent-light:  59 130 246;
+  --accent-dark:   29  78 216;
+  --cyan:           8 145 178;
+  --cyan-light:     6 182 212;
+  --purple:       124  58 237;
+  --purple-light: 139  92 246;
+
+  /* component-level knobs */
+  --glass-bg: 255 255 255;
+  --glass-bg-alpha: 0.72;
+  --glass-border: 15 23 42;
+  --glass-border-alpha: 0.10;
+  --glass-shadow: 0 1px 3px rgba(15, 23, 42, 0.06), 0 8px 24px rgba(15, 23, 42, 0.05);
+  --orb-alpha: 0.13;         /* gradient orbs need more presence on white */
+  --venn-stroke-alpha: 0.75; /* faint strokes vanish on white             */
+  --venn-fill-from: 0.16;
+  --venn-fill-to: 0.03;
+  --venn-core: 37 99 235;
+  --venn-core-alpha: 0.10;
+  --scroll-track: 241 245 249;
+  --scroll-thumb: 148 163 184;
 }
 
-/* Gradient text utility */
+.dark {
+  --c-800:  8  13  25;
+  --c-900:  5   9  17;
+  --c-700: 12  18  34;
+  --c-600: 15  23  42;
+  --c-500: 30  41  59;
+  --c-50:  248 250 252;
+  --c-100: 226 232 240;
+  --c-200: 148 163 184;
+  --c-300: 100 116 139;
+  --c-400:  71  85 105;
+
+  --accent:        59 130 246;
+  --accent-light:  96 165 250;
+  --accent-dark:   37  99 235;
+  --cyan:           6 182 212;
+  --cyan-light:    34 211 238;
+  --purple:       139  92 246;
+  --purple-light: 167 139 250;
+
+  --glass-bg: 15 23 42;
+  --glass-bg-alpha: 0.70;
+  --glass-border: 255 255 255;
+  --glass-border-alpha: 0.08;
+  --glass-shadow: none;
+  --orb-alpha: 0.10;
+  --venn-stroke-alpha: 0.40;
+  --venn-fill-from: 0.25;
+  --venn-fill-to: 0.05;
+  --venn-core: 255 255 255;
+  --venn-core-alpha: 0.08;
+  --scroll-track: 15 23 42;
+  --scroll-thumb: 51 65 85;
+}
+
+/* Respect the OS preference on a first visit, before any explicit choice.
+   ThemeToggle writes localStorage and stamps .dark, which wins over this. */
+@media (prefers-color-scheme: dark) {
+  :root:not(.light):not(.dark) { color-scheme: dark; }
+}
+
+html { color-scheme: light; }
+.dark { color-scheme: dark; }
+
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: rgb(var(--scroll-track)); }
+::-webkit-scrollbar-thumb { background: rgb(var(--scroll-thumb)); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: rgb(var(--c-400)); }
+
+/* Frosted card surface */
+.glass {
+  background: rgb(var(--glass-bg) / var(--glass-bg-alpha));
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgb(var(--glass-border) / var(--glass-border-alpha));
+  box-shadow: var(--glass-shadow);
+}
+
 .gradient-text {
-  background: linear-gradient(135deg, #3b82f6, #8b5cf6, #06b6d4);
+  background: linear-gradient(
+    135deg,
+    rgb(var(--accent)),
+    rgb(var(--purple)),
+    rgb(var(--cyan))
+  );
   background-size: 200% 200%;
   animation: gradient-shift 4s ease infinite;
   -webkit-background-clip: text;
@@ -27,7 +124,19 @@
 }
 
 @keyframes gradient-shift {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
   100% { background-position: 0% 50%; }
+}
+
+/* Theme transition — colors only, so layout and transforms stay snappy */
+html.theme-ready body,
+html.theme-ready body * {
+  transition: background-color 0.25s ease, border-color 0.25s ease, color 0.25s ease;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html.theme-ready body,
+  html.theme-ready body * { transition: none; }
+  .gradient-text { animation: none; }
 }

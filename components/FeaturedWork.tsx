@@ -32,7 +32,7 @@ export default function FeaturedWork() {
                 </div>
                 <div className="p-4 sm:p-6">
                   <div className="flex items-center gap-2 mb-3">
-                    <h3 className="text-lg sm:text-xl font-bold text-white">{project.title}</h3>
+                    <h3 className="text-lg sm:text-xl font-bold text-dark-50">{project.title}</h3>
                     <span className={`text-xs px-2 py-0.5 rounded-full ${badgeStyles[project.badgeColor] || ""}`}>{project.badge}</span>
                   </div>
                   <p className="text-dark-200 text-sm mb-4"><RichText>{project.description}</RichText></p>

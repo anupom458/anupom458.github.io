@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import ThemeToggle from "./ThemeToggle";
 import { motion, useScroll, useSpring } from "framer-motion";
 
 const navLinks = [
@@ -41,14 +42,18 @@ export default function Navigation() {
             <a
               key={link.href}
               href={link.href}
-              className="relative hover:text-white transition after:content-[''] after:absolute after:bottom-[-2px] after:left-1/2 after:w-0 after:h-[2px] after:bg-accent after:transition-all after:-translate-x-1/2 hover:after:w-full"
+              className="relative hover:text-dark-50 transition after:content-[''] after:absolute after:bottom-[-2px] after:left-1/2 after:w-0 after:h-[2px] after:bg-accent after:transition-all after:-translate-x-1/2 hover:after:w-full"
             >
               {link.label}
             </a>
           ))}
+          <ThemeToggle />
         </div>
+        {/* mobile: toggle sits beside the hamburger */}
+        <div className="flex items-center gap-1 md:hidden">
+          <ThemeToggle />
         <button
-          className="md:hidden text-dark-200"
+          className="text-dark-200"
           onClick={() => setMobileOpen(!mobileOpen)}
           aria-label="Toggle menu"
         >
@@ -56,6 +61,7 @@ export default function Navigation() {
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
           </svg>
         </button>
+        </div>
       </div>
       {mobileOpen && (
         <motion.div
@@ -64,7 +70,7 @@ export default function Navigation() {
           className="md:hidden px-4 sm:px-6 pb-4 space-y-3 text-sm text-dark-200"
         >
           {navLinks.map((link) => (
-            <a key={link.href} href={link.href} className="block hover:text-white" onClick={() => setMobileOpen(false)}>
+            <a key={link.href} href={link.href} className="block hover:text-dark-50" onClick={() => setMobileOpen(false)}>
               {link.label}
             </a>
           ))}
