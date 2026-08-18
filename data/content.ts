@@ -152,10 +152,8 @@ export interface KeyProduct {
  *  operations platform, NemaStudio.ai the analysis product. Keep separate. */
 export const keyProducts: KeyProduct[] = [
   { name: "PILOT", detail: "Lab operations platform (project tracking, QC, inventory, analytics)" },
-  { name: "NemaStudio.ai", detail: "Data analysis platform" },
   { name: "Prestige Wall", detail: "Smart OLED display system" },
   { name: "Vault", detail: "Collection tracker web platform" },
-  { name: "GradeLab", detail: "ML-based card grading system" },
   { name: "ISS Spaceflight Hardware", detail: "_C. elegans_ muscle strength measurement" },
 ];
 
