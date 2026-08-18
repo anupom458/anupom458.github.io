@@ -1,8 +1,13 @@
 name: Update Citation Metrics
 
+# NOTE: the weekly schedule was removed on 2026-08-18. Google Scholar returns
+# HTTP 403 to GitHub Actions runners (datacenter IPs), so every scheduled run
+# failed by design rather than silently publishing lower OpenAlex numbers.
+# The refresh now runs weekly from Anupom's Mac, where Scholar is reachable:
+#   scripts/refresh_citations.sh, scheduled by
+#   ~/Library/LaunchAgents/com.anupom.portfolio-citations.plist
+# This workflow is kept for manual runs only (it will fail if Scholar blocks it).
 on:
-  schedule:
-    - cron: '0 6 * * 1'
   workflow_dispatch:
 
 permissions:
