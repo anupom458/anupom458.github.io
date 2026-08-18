@@ -12,7 +12,8 @@ export default function Hero() {
     { value: citations.total_citations, suffix: "+", label: "Citations" },
     { value: stats.publications, suffix: "", label: "Publications" },
     { value: stats.patents, suffix: "", label: "Patents" },
-    { value: 8, suffix: "+", label: "Years Exp." },
+    // parsed from stats.yearsExp in data/content.ts — do not hardcode here
+    { value: parseInt(stats.yearsExp, 10), suffix: "+", label: "Years Exp." },
   ];
 
   return (
