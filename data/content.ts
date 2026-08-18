@@ -64,10 +64,11 @@ export const experience: ExperienceItem[] = [
     period: "Jan 2023 – Present",
     color: "#8b5cf6",
     bullets: [
-      "Architected scalable microfluidics-integrated platforms for automated _C. elegans_ assays",
+      "Built PILOT, the company's lab operations platform — project tracking, QC review, inventory, scheduling, analytics and notifications — used daily by all 17 staff; 385 releases and ~1,980 automated tests since June 2026",
+      "Integrated PILOT across the lab's systems: NemaStudio.ai, NemaQC (PILOT serves as its SSO provider), Project Planning, and Microsoft Teams",
       "Led 10-phase redesign of NemaStudio.ai (React 18, MUI, Plotly.js, WebSocket)",
-      "Managed 14-member cross-functional team (6 R&D engineers, 8 data analysts)",
-      "Reduced platform downtime 40% through improved troubleshooting protocols",
+      "Architected microfluidics platforms for automated _C. elegans_ assays",
+      "Managed 14-member cross-functional team",
     ],
   },
   {
