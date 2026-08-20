@@ -26,6 +26,8 @@ PAPER_KEYWORDS = [
     "compact imaging platform",
     "Senotherapeutic peptide",
     "NemaLife Machine",
+    # granted patent US 12,529,693 — distinct from "NemaLife Machine" above
+    "lifespan and healthspan analysis in nematode",
 ]
 
 

@@ -56,7 +56,16 @@ export default function Publications() {
               {patents.map((pat) => (
                 <div key={pat.title} className={`glass rounded-lg p-4 border-l-4 ${pat.status === "granted" ? "border-amber-400" : "border-dark-400"}`}>
                   <p className="text-dark-50 text-sm font-medium">{pat.title}</p>
-                  <p className="text-dark-300 text-xs mt-1">{pat.detail}</p>
+                  <p className="text-dark-300 text-xs mt-1">
+                    {pat.detail}
+                    {"keyword" in pat && getCitations((pat as { keyword: string }).keyword) > 0 && (
+                      <span className="text-accent">
+                        {" · "}
+                        {getCitations((pat as { keyword: string }).keyword)}
+                        {getCitations((pat as { keyword: string }).keyword) === 1 ? " citation" : " citations"}
+                      </span>
+                    )}
+                  </p>
                 </div>
               ))}
             </div>

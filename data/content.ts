@@ -213,8 +213,10 @@ export const publications: Publication[] = [
   },
 ];
 
+/** `keyword` is optional and links a patent to its Google Scholar
+ *  citation count in data/citations.json. */
 export const patents = [
-  { title: "Automated Microfluidic System for Lifespan and Healthspan Analysis in Nematodes", detail: "US Patent 12,529,693 · Granted 2026", status: "granted" as const },
+  { title: "Automated Microfluidic System for Lifespan and Healthspan Analysis in Nematodes", detail: "US Patent 12,529,693 · Granted 2026", status: "granted" as const, keyword: "lifespan and healthspan analysis in nematode" },
   { title: "A Rapid Microfluidic in-vivo Bioassay for Screening Functional Ingredients for Improving Gut Health", detail: "2023 · Pending", status: "pending" as const },
   { title: "Smart Multi-Display System for Dynamic Trading Card Presentation", detail: "Provisional · Filed November 2025", status: "pending" as const },
 ];
