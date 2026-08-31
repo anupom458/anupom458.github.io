@@ -99,7 +99,7 @@ export const experience: ExperienceItem[] = [
 export const education = [
   { degree: "Ph.D., Electrical Engineering", year: "May 2022", school: "Texas Tech University", dissertation: "Development of Integrated Microfluidic Platforms for Phenotyping Studies in _C. elegans_" },
   { degree: "M.S., Electrical Engineering", year: "May 2020", school: "Texas Tech University" },
-  { degree: "B.S., Electrical Engineering", year: "Dec 2017", school: "Texas Tech University" },
+  { degree: "B.S., Electrical Engineering", year: "Dec 2016", school: "Texas Tech University" },
 ];
 
 export interface FeaturedProject {
