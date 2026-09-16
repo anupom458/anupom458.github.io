@@ -1,13 +1,18 @@
 #!/usr/bin/env python3
 """
 Fetches citation metrics from Google Scholar and updates data/citations.json.
-Uses OpenAlex as fallback if Google Scholar is unavailable.
-Run manually or via GitHub Actions (weekly schedule).
+Falls back to OpenAlex ONLY when no Scholar data exists yet -- see main().
+
+Not run by GitHub Actions: Scholar returns 403 to datacenter IPs. The weekly
+schedule lives on Anupom's Mac (scripts/refresh_citations.sh). Run manually
+with: python3 scripts/update_citations.py
 
 No external dependencies — uses only Python standard library.
 """
 
+import datetime
 import json
+import os
 import re
 import sys
 import urllib.request
@@ -15,6 +20,12 @@ import urllib.request
 GOOGLE_SCHOLAR_USER = "4R_-r1EAAAAJ"
 OPENALEX_AUTHOR_ID = "A5016067585"
 JSON_FILE = "data/citations.json"
+
+# Liveness lives OUTSIDE the repo and outside the numbers. A watchdog reads it
+# to answer one question -- "when did this last successfully reach Scholar?" --
+# without depending on the repo, the schedule, or this script still working.
+HEARTBEAT = os.path.expanduser(
+    "~/Library/Application Support/portfolio-citations/heartbeat.json")
 
 # Map papers to unique keywords that appear in BOTH Google Scholar titles
 # (which are truncated) AND the portfolio HTML titles
@@ -199,13 +210,32 @@ def main():
         "papers": paper_data,
     }
 
-    if existing == data:
+    # last_updated marks when the NUMBERS last moved, not when we last looked.
+    # Putting "when we last looked" in here would rewrite the file every week
+    # and push a no-op commit, and -- worse -- would make a stalled job look
+    # fresh. Liveness is the heartbeat below, deliberately a separate fact.
+    def metrics_only(d):
+        return {k: v for k, v in (d or {}).items() if k != "last_updated"}
+
+    if metrics_only(existing) == data:
         print("No changes needed — metrics are up to date.")
     else:
+        data["last_updated"] = datetime.date.today().isoformat()
         with open(JSON_FILE, "w") as f:
             json.dump(data, f, indent=2)
             f.write("\n")
         print(f"Updated {JSON_FILE} with new metrics.")
+
+    # Written on every successful fetch, changed numbers or not.
+    os.makedirs(os.path.dirname(HEARTBEAT), exist_ok=True)
+    with open(HEARTBEAT, "w") as f:
+        json.dump({
+            "last_checked": datetime.datetime.now().isoformat(timespec="seconds"),
+            "source": source,
+            "total_citations": author_metrics["cited_by_count"],
+        }, f, indent=2)
+        f.write("\n")
+    print(f"Heartbeat written to {HEARTBEAT}")
 
 
 if __name__ == "__main__":

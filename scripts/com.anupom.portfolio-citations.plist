@@ -8,7 +8,7 @@
     <key>ProgramArguments</key>
     <array>
         <string>/bin/bash</string>
-        <string>/Users/Anupom/Documents/Research Work/Personal Projects/Resume/portfolio/scripts/refresh_citations.sh</string>
+        <string>/Users/Anupom/dev/portfolio/scripts/refresh_citations.sh</string>
     </array>
 
     <!-- Mondays at 09:00 local. If the Mac is asleep, launchd runs it on wake. -->
