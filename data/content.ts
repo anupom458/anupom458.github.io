@@ -61,11 +61,21 @@ export const experience: ExperienceItem[] = [
   {
     company: "NemaLife Inc.",
     role: "Director, Operations & Platform Engineering",
-    period: "Mar 2022 – Present",
+    period: "Oct 2026 – Present",
+    color: "#a855f7",
+    isActive: true,
+    bullets: [
+      "Report to the Chief Technology Officer, accountable for the key performance indicators of wetlab screening, chip manufacturing and data operations",
+      "Diagnose and resolve the causes when those indicators fall short",
+      "Continue to lead development and automation of microsystem and hardware technologies across the bio-intelligence platform",
+    ],
+  },
+  {
+    company: "NemaLife Inc.",
+    role: "Lead Platform Developer",
+    period: "Jan 2023 – Sep 2026",
     color: "#8b5cf6",
     bullets: [
-      "Promoted twice: Microsystems Engineer (2022) → Lead Platform Developer (2023) → Director, Operations & Platform Engineering (2026), reporting to the CTO",
-      "Accountable for the KPIs of wetlab screening, chip manufacturing and data operations, and for microsystem and hardware automation across the platform",
       "Built PILOT, the company's lab operations platform — project tracking, QC review, inventory, scheduling, analytics and notifications — used daily by all 17 staff; 385 releases and ~1,980 automated tests since June 2026",
       "Integrated PILOT across the lab's systems: NemaStudio.ai, NemaQC (PILOT serves as its SSO provider), Project Planning, and Microsoft Teams",
       "Led 10-phase redesign of NemaStudio.ai (React 18, MUI, Plotly.js, WebSocket)",
