@@ -23,13 +23,13 @@ export const stats = {
 export const about = {
   bio: [
     "I build systems that bridge hardware and software — from microfluidic devices deployed on the International Space Station to IoT consumer products I designed, manufactured, and shipped. As Founder of Dynera Labs, I bring ideas from concept to manufactured product.",
-    `As Lead Platform Developer at NemaLife Inc., I architect scalable platforms for high-throughput _C. elegans_ phenotyping, lead a 14-person cross-functional team, and built NemaStudio.ai — our data analysis web platform using React 18, Plotly.js, and MUI. My collaborations with NASA and ESA on spaceflight payloads have resulted in 7 peer-reviewed publications (${citations.total_citations}+ citations) and a granted US patent.`,
+    `As Director of Operations & Platform Engineering at NemaLife Inc., I architect scalable platforms for high-throughput _C. elegans_ phenotyping, lead a 14-person cross-functional team, and built NemaStudio.ai — our data analysis web platform using React 18, Plotly.js, and MUI. My collaborations with NASA and ESA on spaceflight payloads have resulted in 7 peer-reviewed publications (${citations.total_citations}+ citations) and a granted US patent.`,
     "I hold a Ph.D. in Electrical Engineering from Texas Tech University, where my dissertation on integrated microfluidic platforms led directly to the founding of NemaLife Inc.",
   ],
   quickFacts: [
     { icon: "location" as const, text: "Lubbock, TX" },
     { icon: "education" as const, text: "Ph.D., Electrical Engineering" },
-    { icon: "work" as const, text: "Lead Platform Developer, NemaLife" },
+    { icon: "work" as const, text: "Director, Operations & Platform Engineering, NemaLife" },
   ],
 };
 
@@ -60,10 +60,12 @@ export const experience: ExperienceItem[] = [
   },
   {
     company: "NemaLife Inc.",
-    role: "Lead Platform Developer",
-    period: "Jan 2023 – Present",
+    role: "Director, Operations & Platform Engineering",
+    period: "Mar 2022 – Present",
     color: "#8b5cf6",
     bullets: [
+      "Promoted twice: Microsystems Engineer (2022) → Lead Platform Developer (2023) → Director, Operations & Platform Engineering (2026), reporting to the CTO",
+      "Accountable for the KPIs of wetlab screening, chip manufacturing and data operations, and for microsystem and hardware automation across the platform",
       "Built PILOT, the company's lab operations platform — project tracking, QC review, inventory, scheduling, analytics and notifications — used daily by all 17 staff; 385 releases and ~1,980 automated tests since June 2026",
       "Integrated PILOT across the lab's systems: NemaStudio.ai, NemaQC (PILOT serves as its SSO provider), Project Planning, and Microsoft Teams",
       "Led 10-phase redesign of NemaStudio.ai (React 18, MUI, Plotly.js, WebSocket)",
