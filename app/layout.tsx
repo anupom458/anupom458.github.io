@@ -15,7 +15,7 @@ const jetbrainsMono = JetBrains_Mono({
 export const metadata: Metadata = {
   title: "Taslim R. Anupom, Ph.D. | Engineer & Researcher",
   description:
-    "Ph.D. Electrical Engineer specializing in microfluidics, IoT, full-stack development, and space biology. Lead Platform Developer at NemaLife.",
+    "Ph.D. Electrical Engineer specializing in microfluidics, IoT, full-stack development, and space biology. Director, Operations & Platform Engineering at NemaLife.",
 };
 
 export default function RootLayout({
