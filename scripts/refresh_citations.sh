@@ -38,6 +38,19 @@ notify() {
 }
 fail() { say "FAIL: $1"; notify "$1" "Weekly refresh failed"; exit 1; }
 
+# Catch-up guard. The LaunchAgent fires DAILY, not weekly, so a Monday missed
+# because the Mac was off gets picked up the next time it is on. Scholar is only
+# actually scraped when the last success is MIN_AGE_DAYS old, so the daily
+# trigger does not turn into daily scraping (which would get us rate-limited).
+HEARTBEAT="$HOME/Library/Application Support/portfolio-citations/heartbeat.json"
+MIN_AGE_DAYS=6
+if [ -f "$HEARTBEAT" ]; then
+  age=$(( ( $(date +%s) - $(/usr/bin/stat -f %m "$HEARTBEAT") ) / 86400 ))
+  if [ "$age" -lt "$MIN_AGE_DAYS" ]; then
+    exit 0          # checked recently; nothing to do, stay silent
+  fi
+fi
+
 say "--- run start ---"
 cd "$REPO" || fail "cannot reach the repo at $REPO"
 

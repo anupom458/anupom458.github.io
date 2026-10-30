@@ -2,29 +2,29 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-    <key>Label</key>
-    <string>com.anupom.portfolio-citations</string>
-
-    <key>ProgramArguments</key>
-    <array>
-        <string>/bin/bash</string>
-        <string>/Users/Anupom/dev/portfolio/scripts/refresh_citations.sh</string>
-    </array>
-
-    <!-- Mondays at 09:00 local. If the Mac is asleep, launchd runs it on wake. -->
-    <key>StartCalendarInterval</key>
-    <dict>
-        <key>Weekday</key><integer>1</integer>
-        <key>Hour</key><integer>9</integer>
-        <key>Minute</key><integer>0</integer>
-    </dict>
-
-    <key>RunAtLoad</key>
-    <false/>
-
-    <key>StandardOutPath</key>
-    <string>/Users/Anupom/Library/Logs/portfolio-citations.launchd.log</string>
-    <key>StandardErrorPath</key>
-    <string>/Users/Anupom/Library/Logs/portfolio-citations.launchd.log</string>
+	<key>Label</key>
+	<string>com.anupom.portfolio-citations</string>
+	<key>ProgramArguments</key>
+	<array>
+		<string>/bin/bash</string>
+		<string>/Users/Anupom/dev/portfolio/scripts/refresh_citations.sh</string>
+	</array>
+	<key>RunAtLoad</key>
+	<false/>
+	<key>StandardErrorPath</key>
+	<string>/Users/Anupom/Library/Logs/portfolio-citations.launchd.log</string>
+	<key>StandardOutPath</key>
+	<string>/Users/Anupom/Library/Logs/portfolio-citations.launchd.log</string>
+	<key>StartCalendarInterval</key>
+	<dict>
+		<key>Hour</key>
+		<integer>9</integer>
+		<key>Minute</key>
+		<integer>0</integer>
+		<key>Weekday</key>
+		<integer>1</integer>
+	</dict>
+	<key>StartInterval</key>
+	<integer>86400</integer>
 </dict>
 </plist>

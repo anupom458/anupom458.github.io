@@ -24,7 +24,10 @@ JSON_FILE = "data/citations.json"
 # Liveness lives OUTSIDE the repo and outside the numbers. A watchdog reads it
 # to answer one question -- "when did this last successfully reach Scholar?" --
 # without depending on the repo, the schedule, or this script still working.
-HEARTBEAT = os.path.expanduser(
+# Overridable via env: a manual verification run must NOT touch the real
+# heartbeat, or it would reset the staleness clock the watchdog reads and hide
+# a scheduled job that has actually stopped running.
+HEARTBEAT = os.environ.get("CITATIONS_HEARTBEAT") or os.path.expanduser(
     "~/Library/Application Support/portfolio-citations/heartbeat.json")
 
 # Map papers to unique keywords that appear in BOTH Google Scholar titles
